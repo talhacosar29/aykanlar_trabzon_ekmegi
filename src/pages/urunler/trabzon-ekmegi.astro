@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site.js';
+---
+
+<Base
+  title="Ekşi Mayalı Trabzon Ekmeği | Aykanlar"
+  description="Odun ateşinde ekşi mayalı Trabzon ekmeği. Karadeniz’in geleneksel lezzeti, Aykanlar’ın ana ürünü."
+  path="/urunler/trabzon-ekmegi"
+  ogImage="/images/products/trabzon-ekmegi.jpg"
+>
+  <section class="product-hero">
+    <img src="/images/products/trabzon-ekmegi.jpg" alt="Geleneksel Trabzon ekmeği somunu" width="1600" height="1200" />
+    <div class="copy">
+      <span class="eyebrow">Ana Ürün</span>
+      <h1>Ekşi Mayalı Trabzon Ekmeği</h1>
+      <p>
+        {site.tagline}. Odun ateşinde, ekşi mayayla. Karadeniz sofralarının en bilinen ekmeğini,
+        her gün taptaze üretiyoruz.
+      </p>
+      <a class="btn btn-dark" href="/iletisim" style="margin-top:1.6rem; align-self:flex-start">İletişime Geç</a>
+    </div>
+  </section>
+
+  <section class="wrap detail-cols">
+    <article data-reveal>
+      <h2>Karakteri</h2>
+      <p>
+        Trabzon ekmeği; kalın kabuğu, tok iç yapısı ve kendine has aromasıyla tanınır.
+        Ekşi maya, ekmeğe hem lezzet hem de uzun süre dayanan bir tazelik kazandırır.
+      </p>
+    </article>
+    <article data-reveal>
+      <h2>Nasıl üretiriz</h2>
+      <p>
+        Markamızın açık ifadesi nettir: odun ateşinde ekşi mayalı Trabzon ekmeği.
+        Hamur, mayalama, şekil ve pişirme — her gün aynı özenle tekrarlanır.
+      </p>
+    </article>
+    <article data-reveal>
+      <h2>Sofrada yeri</h2>
+      <p>
+        Kahvaltıdan akşam sofrasına, peynirin, çorbanın, tereyağının yanında.
+        Karadeniz mutfağının sessiz ama vazgeçilmez merkezidir.
+      </p>
+    </article>
+  </section>
+
+  <section class="flagship" style="min-height:auto">
+    <div class="flagship-media" data-reveal="image">
+      <img src="/images/gallery/cooling-racks.jpg" alt="Fırından yeni çıkmış ekmekler soğuma rafında" loading="lazy" />
+    </div>
+    <div class="flagship-copy" data-reveal>
+      <span class="eyebrow">Tazelik</span>
+      <h2>Her gün taptaze, fırından.</h2>
+      <p>
+        Bu cümle bir reklam sloganı değil; Aykanlar’ın kendi dilidir.
+        Trabzon ekmeğini günlük üretmenin anlamı da budur.
+      </p>
+      <a class="link-arrow" href="/urunler/diger-urunler" style="color:var(--cream); border-color:var(--gold)">
+        Diğer ürünleri gör
+      </a>
+    </div>
+  </section>
+</Base>

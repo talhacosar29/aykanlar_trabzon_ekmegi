@@ -1,0 +1,236 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, products } from '../data/site.js';
+
+const featured = [products[0], products[1], products[2]];
+---
+
+<Base
+  title="Aykanlar Trabzon Ekmeği | 20 Yıllık Karadeniz Lezzeti"
+  description="Odun ateşinde ekşi mayalı Trabzon ekmeği. Aykanlar; İstanbul ve İzmit’te her gün taptaze, fırından sofranıza."
+  path="/"
+  transparentHeader={true}
+>
+  <section class="hero">
+    <div class="hero-media">
+      <img
+        src="/images/hero/production.jpg"
+        alt="Usta, odun ateşli fırına uzun kürekle ekmek sürerken"
+        fetchpriority="high"
+        width="1536"
+        height="1024"
+      />
+    </div>
+    <div class="hero-copy">
+      <span class="eyebrow">Odun Ateşinde Ekşi Maya</span>
+      <h1>20 Yıllık<br />Karadeniz Lezzeti</h1>
+      <p>
+        Aykanlar Trabzon Ekmeği olarak her gün taptaze, fırından sofranıza ulaşıyoruz.
+        Gelenekten aldığımız güçle, ekşi mayanın ve odun ateşinin izini sürüyoruz.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="/urunler">Ürünlerimizi Keşfet</a>
+        <a class="btn btn-ghost" href="/kurumsal">Biz Kimiz?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap intro">
+    <h2 data-reveal>Gelenekten gelen güç, her gün taze ekmek.</h2>
+    <div class="body" data-reveal>
+      <p class="lead">
+        Gelenekten aldığımız güçle modern üretim anlayışını bir araya getiriyoruz.
+        Her aşamasında doğallık, kalite ve ustalık olan bu yolculukta bizim için en önemli değer; güven ve lezzettir.
+      </p>
+      <a class="link-arrow" href="/kurumsal">Kurumsal Hikâyemiz</a>
+    </div>
+  </section>
+
+  <section class="wrap-wide featured">
+    <div class="section-head">
+      <div data-reveal>
+        <span class="eyebrow">Ürünler</span>
+        <h2>Lezzetimizin Öne Çıkanları</h2>
+      </div>
+      <a class="link-arrow" href="/urunler" data-reveal>Tümünü Gör</a>
+    </div>
+    <div class="feature-grid">
+      <article class="product-tile tile-a" data-reveal="image">
+        <img src={featured[0].image} alt={featured[0].imageAlt} width="1200" height="1600" loading="lazy" />
+        <div class="meta">
+          <h3>{featured[0].name}</h3>
+          <p>{featured[0].short}</p>
+          <a href={featured[0].href}>Ürünü İncele →</a>
+        </div>
+      </article>
+      <article class="product-tile tile-b" data-reveal="image">
+        <img src={featured[1].image} alt={featured[1].imageAlt} width="900" height="700" loading="lazy" />
+        <div class="meta">
+          <h3>{featured[1].name}</h3>
+          <p>{featured[1].short}</p>
+          <a href={featured[1].href}>Ürünü İncele →</a>
+        </div>
+      </article>
+      <article class="product-tile tile-c" data-reveal="image">
+        <img src={featured[2].image} alt={featured[2].imageAlt} width="900" height="700" loading="lazy" />
+        <div class="meta">
+          <h3>{featured[2].name}</h3>
+          <p>{featured[2].short}</p>
+          <a href={featured[2].href}>Ürünü İncele →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="flagship">
+    <div class="flagship-media" data-reveal="image">
+      <img src="/images/products/trabzon-ekmegi.jpg" alt="Trabzon ekmeğinin kalın, kızarmış kabuğu" width="1600" height="1200" loading="lazy" />
+    </div>
+    <div class="flagship-copy" data-reveal>
+      <span class="eyebrow">Trabzon Ekmeği</span>
+      <h2>Karadeniz’in Geleneksel Lezzeti</h2>
+      <p>
+        Markamızın kalbinde ekşi mayalı Trabzon ekmeği durur. Instagram’da da söylediğimiz gibi:
+        odun ateşinde, her gün taptaze.
+      </p>
+      <p>
+        Kalın kabuğu, tok iç yapısı ve uzun süre tazeliğini koruyan karakteri ile Karadeniz
+        ekmek kültürünün en bilinen temsilcilerindendir.
+      </p>
+      <dl class="flagship-facts">
+        <div>
+          <dt>Mayalama</dt>
+          <dd>Ekşi maya</dd>
+        </div>
+        <div>
+          <dt>Pişirme</dt>
+          <dd>Odun ateşi</dd>
+        </div>
+        <div>
+          <dt>Sözümüz</dt>
+          <dd>Her gün taze</dd>
+        </div>
+        <div>
+          <dt>Bölge</dt>
+          <dd>{site.regions}</dd>
+        </div>
+      </dl>
+      <a class="btn btn-ghost" href="/urunler/trabzon-ekmegi">Trabzon Ekmeğini İncele</a>
+    </div>
+  </section>
+
+  <section class="wrap values">
+    <div class="values-layout">
+      <div data-reveal>
+        <span class="eyebrow">Değerlerimiz</span>
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-top: 0.7rem;">
+          Sofraya yalnızca ekmek değil, emek taşırız.
+        </h2>
+      </div>
+      <div class="value-list">
+        <article class="value-item" data-reveal>
+          <span>01</span>
+          <div>
+            <h3>Kalite</h3>
+            <p>Her somunda aynı özen. Hamurdan fırına, lezzetin sürdüğü bir üretim anlayışı.</p>
+          </div>
+        </article>
+        <article class="value-item" data-reveal>
+          <span>02</span>
+          <div>
+            <h3>Gelenek</h3>
+            <p>Karadeniz’in ekmek kültürü ve ekşi mayanın izi, günlük üretimimizin temelidir.</p>
+          </div>
+        </article>
+        <article class="value-item" data-reveal>
+          <span>03</span>
+          <div>
+            <h3>Tazelik</h3>
+            <p>Her gün taptaze, fırından. Bu, markamızın Instagram’daki açık sözüdür.</p>
+          </div>
+        </article>
+        <article class="value-item" data-reveal>
+          <span>04</span>
+          <div>
+            <h3>Güven</h3>
+            <p>Bizim için en önemli değer; güven ve lezzettir. Emeğin en saf hali sofraya gider.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="process-head" data-reveal>
+        <span class="eyebrow">Üretim</span>
+        <h2>Her Gün Taze, Her Gün Özenle</h2>
+        <p>
+          Buğdaydan hamura, mayalanmadan pişirmeye. Aykanlar’ın üretim yolculuğu,
+          geleneksel ustalığı günlük bir disiplinle birleştirir.
+        </p>
+      </div>
+      <div class="process-flow">
+        <figure class="process-step" data-reveal="image">
+          <img src="/images/process/wheat.jpg" alt="Buğday taneleri" loading="lazy" width="800" height="600" />
+          <figcaption><strong>01</strong><span>Buğday</span></figcaption>
+        </figure>
+        <figure class="process-step" data-reveal="image">
+          <img src="/images/process/kneading.jpg" alt="Hamur yoğurma" loading="lazy" width="800" height="600" />
+          <figcaption><strong>02</strong><span>Hamur</span></figcaption>
+        </figure>
+        <figure class="process-step" data-reveal="image">
+          <img src="/images/process/shaping.jpg" alt="Hamurun elde şekillendirilmesi" loading="lazy" width="800" height="600" />
+          <figcaption><strong>03</strong><span>Şekil</span></figcaption>
+        </figure>
+        <figure class="process-step" data-reveal="image">
+          <img src="/images/process/peel.jpg" alt="Odun ateşli fırına ekmek sürülmesi" loading="lazy" width="800" height="600" />
+          <figcaption><strong>04</strong><span>Pişirme</span></figcaption>
+        </figure>
+        <figure class="process-step" data-reveal="image">
+          <img src="/images/gallery/cooling-racks.jpg" alt="Fırından çıkan ekmekler soğuma rafında" loading="lazy" width="800" height="600" />
+          <figcaption><strong>05</strong><span>Sofraya</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap ig-block">
+    <div class="section-head">
+      <div data-reveal>
+        <span class="eyebrow">Sosyal</span>
+        <h2>Instagram’dan</h2>
+        <p class="lead" style="margin-top:0.8rem">{site.instagramHandle}</p>
+      </div>
+      <a class="link-arrow" href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal>
+        Instagram’da Bizi Takip Edin →
+      </a>
+    </div>
+    <div class="ig-grid">
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/instagram/ig-1.jpg" alt="Aykanlar ekmekleri soğuma rafında" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/instagram/ig-2.jpg" alt="Aykanlar üretim alanı" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/instagram/ig-3.jpg" alt="Aykanlar Trabzon Ekmeği tabelası" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/gallery/bakery-interior.jpg" alt="Fırın tezgâhı ve raflar" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/process/flour.jpg" alt="Un ve usta elleri" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/gallery/oven-interior.jpg" alt="Odun fırınının içi" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/gallery/crust-macro.jpg" alt="Ekmek kabuğu detayı" loading="lazy" />
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
+        <img src="/images/process/production-floor.jpg" alt="Üretim hattı" loading="lazy" />
+      </a>
+    </div>
+  </section>
+</Base>

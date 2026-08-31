@@ -1,0 +1,47 @@
+---
+import Logo from './Logo.astro';
+import { nav, site } from '../data/site.js';
+---
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label={site.fullName}><Logo variant="light" /></a>
+      <p>{site.description}</p>
+    </div>
+
+    <div>
+      <h2>Keşfet</h2>
+      <ul>
+        {nav.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h2>Ürünler</h2>
+      <ul>
+        <li><a href="/urunler/trabzon-ekmegi">Trabzon Ekmeği</a></li>
+        <li><a href="/urunler/diger-urunler">Diğer Ürünler</a></li>
+        <li><a href="/urunler">Tüm Ürünler</a></li>
+        <li><a href="/galeri">Galeri</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>İletişim</h2>
+      <ul>
+        <li>{site.address.street}</li>
+        <li>{site.address.district}</li>
+        <li><a href={site.phoneHref}>{site.phone}</a></li>
+        <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">{site.instagramHandle}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {new Date().getFullYear()} {site.name} Trabzon Ekmeği</span>
+    <span>Demo kurumsal web sitesi</span>
+  </div>
+</footer>

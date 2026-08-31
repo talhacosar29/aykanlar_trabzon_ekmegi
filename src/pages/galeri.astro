@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { gallery } from '../data/site.js';
+---
+
+<Base
+  title="Galeri | Aykanlar Trabzon Ekmeği"
+  description="Aykanlar Trabzon Ekmeği görsel arşivi: ürün, üretim, fırın ve detay fotoğrafları."
+  path="/galeri"
+>
+  <section class="wrap page-hero">
+    <span class="eyebrow">Galeri</span>
+    <h1>Fırının gördüğü ışık.</h1>
+    <p>
+      Ürün, üretim, fırın ve detay. Bazı kareler Aykanlar’ın Instagram paylaşımından;
+      diğerleri aynı görsel dile yakın, iştah açıcı ekmek fotoğraflarıdır.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="filters" data-reveal>
+      <button type="button" class="is-on" data-filter="all">Tümü</button>
+      <button type="button" data-filter="urun">Ürün</button>
+      <button type="button" data-filter="uretim">Üretim</button>
+      <button type="button" data-filter="firin">Fırın</button>
+      <button type="button" data-filter="detay">Detay</button>
+    </div>
+
+    <div class="masonry">
+      {gallery.map((g) => (
+        <figure data-cat={g.cat} data-gallery-item data-src={g.src} data-alt={g.alt}>
+          <img src={g.src} alt={g.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <div class="lightbox" data-lightbox hidden>
+    <button type="button" data-lightbox-close aria-label="Kapat">×</button>
+    <div>
+      <img alt="" />
+      <p data-lightbox-caption></p>
+    </div>
+  </div>
+</Base>

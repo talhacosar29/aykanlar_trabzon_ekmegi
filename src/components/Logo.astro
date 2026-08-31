@@ -1,0 +1,57 @@
+---
+const { variant = 'dark' } = Astro.props;
+---
+
+<span class:list={['brand-mark', variant]} aria-hidden="true">
+  <svg viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
+    <rect width="280" height="88" rx="10" class="mark-bg" />
+    <line x1="18" y1="44" x2="34" y2="22" class="mark-accent" />
+    <text x="44" y="42" class="mark-name">ΛYKΛNLΛR</text>
+    <text x="44" y="64" class="mark-sub">TRABZON EKMEĞİ</text>
+    <line x1="246" y1="58" x2="262" y2="72" class="mark-accent" />
+  </svg>
+</span>
+
+<style>
+  .brand-mark {
+    display: block;
+    width: 168px;
+    height: auto;
+    line-height: 0;
+  }
+  .brand-mark svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .mark-name,
+  .mark-sub {
+    font-family: Manrope, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+  .mark-name {
+    font-size: 26px;
+    letter-spacing: 3.2px;
+  }
+  .mark-sub {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3.8px;
+  }
+  .mark-accent {
+    stroke-width: 3;
+    stroke-linecap: square;
+  }
+  .dark .mark-bg { fill: #16110e; }
+  .dark .mark-name,
+  .dark .mark-sub { fill: #f5efe5; }
+  .dark .mark-accent { stroke: #c42b32; }
+  .light .mark-bg { fill: none; }
+  .light .mark-name,
+  .light .mark-sub { fill: #f5efe5; }
+  .light .mark-accent { stroke: #c42b32; }
+
+  @media (max-width: 480px) {
+    .brand-mark { width: 142px; }
+  }
+</style>

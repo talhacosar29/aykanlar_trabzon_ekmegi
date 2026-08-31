@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 88" role="img" aria-label="Aykanlar Trabzon Ekmei">
+  <rect width="280" height="88" rx="10" fill="#16110E"/>
+  <line x1="18" y1="44" x2="34" y2="22" stroke="#C42B32" stroke-width="3" stroke-linecap="square"/>
+  <text x="44" y="42" fill="#F5EFE5" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="3.2">›YK›NL›R</text>
+  <text x="44" y="64" fill="#F5EFE5" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="9" font-weight="500" letter-spacing="3.8">TRABZON EKME0</text>
+  <line x1="246" y1="58" x2="262" y2="72" stroke="#C42B32" stroke-width="3" stroke-linecap="square"/>
+</svg>

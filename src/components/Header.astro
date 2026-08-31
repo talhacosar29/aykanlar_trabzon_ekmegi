@@ -1,0 +1,45 @@
+---
+import Logo from './Logo.astro';
+import { nav, site } from '../data/site.js';
+
+const { transparent = false, path = '/' } = Astro.props;
+const isActive = (href) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class:list={['site-header', { 'is-transparent': transparent }]} data-header>
+  <div class="header-inner">
+    <a class="header-logo" href="/" aria-label={site.fullName}>
+      <span class="logo-on-dark"><Logo variant="light" /></span>
+      <span class="logo-on-light"><Logo variant="dark" /></span>
+    </a>
+
+    <nav class="header-nav" aria-label="Ana menü">
+      {nav.map((item) => (
+        <a href={item.href} class:list={[{ active: isActive(item.href) }]}>{item.label}</a>
+      ))}
+    </nav>
+
+    <a class="header-cta" href="/urunler">Ürünlerimizi Keşfet</a>
+
+    <button class="nav-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" data-mobile-nav>
+  <div class="mobile-nav-top">
+    <a href="/" aria-label={site.fullName}><Logo variant="dark" /></a>
+    <button class="nav-toggle is-open" type="button" aria-label="Menüyü kapat" data-nav-close>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav>
+    {nav.map((item) => (
+      <a href={item.href} class:list={[{ active: isActive(item.href) }]}>{item.label}</a>
+    ))}
+  </nav>
+  <a class="btn btn-dark" href="/iletisim">İletişime Geç</a>
+</div>

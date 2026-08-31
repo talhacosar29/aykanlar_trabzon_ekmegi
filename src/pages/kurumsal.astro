@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+---
+
+<Base
+  title="Kurumsal | Aykanlar Trabzon Ekmeği"
+  description="Aykanlar Trabzon Ekmeği’nin hikâyesi: 20 yıllık Karadeniz lezzeti, odun ateşinde ekşi maya ve her gün taze üretim."
+  path="/kurumsal"
+>
+  <section class="wrap page-hero">
+    <span class="eyebrow">Kurumsal</span>
+    <h1>Topraktan fırına uzanan emeğin hikâyesi.</h1>
+    <p>
+      Aykanlar Trabzon Ekmeği olarak, gelenekten aldığımız güçle modern üretim anlayışını bir araya getiriyoruz.
+    </p>
+  </section>
+
+  <div class="page-photo" data-reveal="image">
+    <img src="/images/process/peel.jpg" alt="Usta, odun ateşli fırına kürekle ekmek sürerken" width="1536" height="1024" />
+  </div>
+
+  <section class="wrap story">
+    <div data-reveal>
+      <span class="eyebrow">Hikâye</span>
+      <h2>Karadeniz’in ekmeğini, her gün yeniden.</h2>
+    </div>
+    <div data-reveal>
+      <p>
+        {site.tagline}. Bu ifade, markamızın Instagram’daki kendi sözüdür. Aykanlar için ekmek;
+        yalnızca bir ürün değil, ustalıkla süren bir gelenektir.
+      </p>
+      <p>
+        Odun ateşinde ekşi mayalı Trabzon ekmeği üretiyoruz. İstanbul ve İzmit’te,
+        her gün taptaze, fırından sofraya uzanan bir lezzet anlayışıyla çalışıyoruz.
+      </p>
+      <p>
+        Her aşamasında doğallık, kalite ve ustalık olan bu yolculukta bizim için en önemli değer;
+        güven ve lezzettir. Sofralarınıza yalnızca ekmek değil, emeğin en saf halini sunmayı isteriz.
+      </p>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="wrap" data-reveal>
+      <blockquote>“Gerçek lezzet, emekten doğar.”</blockquote>
+      <cite>Aykanlar Trabzon Ekmeği</cite>
+    </div>
+  </section>
+
+  <section class="wrap values">
+    <div class="values-layout">
+      <div data-reveal>
+        <span class="eyebrow">Değerlerimiz</span>
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-top: 0.7rem;">
+          Markayı ayakta tutan dört söz.
+        </h2>
+        <p class="lead" style="margin-top:1.2rem">
+          Rakam uydurmadan, sertifika eklemeden: yalnızca savunduğumuz üretim dilini yazıyoruz.
+        </p>
+      </div>
+      <div class="value-list">
+        <article class="value-item" data-reveal>
+          <span>01</span>
+          <div>
+            <h3>Kalite</h3>
+            <p>Ekşi maya ve odun ateşi. Kısa yollar değil, doğru pişirme ve dengeli hamur.</p>
+          </div>
+        </article>
+        <article class="value-item" data-reveal>
+          <span>02</span>
+          <div>
+            <h3>Gelenek</h3>
+            <p>Trabzon ekmeği kültürü, Karadeniz’in uzun mayalama ve tok ekmek karakterinden gelir.</p>
+          </div>
+        </article>
+        <article class="value-item" data-reveal>
+          <span>03</span>
+          <div>
+            <h3>Tazelik</h3>
+            <p>Her gün taptaze. Fırının ritmi, markanın vaadidir.</p>
+          </div>
+        </article>
+        <article class="value-item" data-reveal>
+          <span>04</span>
+          <div>
+            <h3>Güven</h3>
+            <p>Aile ve ustalık hissi; abartısız, günlük ve sürdürülebilir bir üretim disiplini.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap story" style="padding-top:0">
+    <div data-reveal>
+      <span class="eyebrow">Üretim</span>
+      <h2>Modern tesis, geleneksel iz.</h2>
+    </div>
+    <div data-reveal>
+      <p>
+        Paylaştığımız üretim görselleri, Aykanlar’ın günlük çalışma düzenini gösterir:
+        hamurun elde şekillendirildiği masalar, tepsiler, fırın hatları.
+      </p>
+      <p>
+        Amacımız köy fırını romantizmi değil; yıllardır kaliteli ekmek üreten,
+        güvenilir ve profesyonel bir marka duruşudur.
+      </p>
+      <a class="link-arrow" href="/urunler" style="margin-top:1.4rem">Ürünlerimizi Keşfet</a>
+    </div>
+  </section>
+</Base>

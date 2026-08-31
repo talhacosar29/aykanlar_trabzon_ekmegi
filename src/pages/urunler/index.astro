@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import { products } from '../../data/site.js';
+---
+
+<Base
+  title="Ürünler | Aykanlar Trabzon Ekmeği"
+  description="Ekşi mayalı Trabzon ekmeği, tam buğday, mısır ekmeği, pide, tava ve baston çeşitleri. Aykanlar’ın ürün ailesi."
+  path="/urunler"
+>
+  <section class="wrap page-hero">
+    <span class="eyebrow">Ürünler</span>
+    <h1>Fırından çıkan lezzet ailesi.</h1>
+    <p>
+      Ana ürünümüz ekşi mayalı Trabzon ekmeğidir. Yanında tam buğday, tava, baston, pide,
+      mısır ekmeği ve yöresel çeşitler yer alır.
+    </p>
+  </section>
+
+  <section class="wrap-wide catalog">
+    {products.map((p, i) => (
+      <article data-reveal={i < 3 ? 'image' : undefined}>
+        <a href={p.href}>
+          <img src={p.image} alt={p.imageAlt} loading="lazy" width="900" height="700" />
+          <div class="pad">
+            <h3>{p.name}</h3>
+            <p>{p.short}</p>
+            <span class="link-arrow">Ürünü İncele →</span>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+</Base>
