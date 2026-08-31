@@ -1,11 +1,14 @@
 /** Prefix site paths for GitHub Pages (`base`) and local dev. */
 export function url(path = '/') {
   if (/^(https?:|tel:|mailto:)/i.test(path)) return path;
-  const rawBase = import.meta.env.BASE_URL || '/';
-  const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+  const prefix = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+  if (prefix && (path === prefix || path.startsWith(`${prefix}/`))) return path;
   const [pathname, hash] = path.split('#');
-  const rest = !pathname || pathname === '/' ? '.' : pathname.replace(/^\//, '');
-  const joined = new URL(rest, `https://dummy.local${base}`).pathname;
+  const clean = (pathname || '/').replace(/^\/+/, '');
+  const isFile = /\.[a-z0-9]+$/i.test(clean.split('/').pop() || '');
+  let joined = clean ? `${prefix}/${clean}` : `${prefix}/`;
+  if (!joined.startsWith('/')) joined = `/${joined}`;
+  if (!isFile && !joined.endsWith('/')) joined += '/';
   return hash ? `${joined}#${hash}` : joined;
 }
 
