@@ -1,12 +1,12 @@
 ---
 import Logo from './Logo.astro';
-import { nav, site } from '../data/site.js';
+import { nav, site, url } from '../data/site.js';
 ---
 
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="/" aria-label={site.fullName}><Logo variant="light" /></a>
+      <a href={url('/')} aria-label={site.fullName}><Logo variant="light" /></a>
       <p>{site.description}</p>
     </div>
 
@@ -14,7 +14,7 @@ import { nav, site } from '../data/site.js';
       <h2>Keşfet</h2>
       <ul>
         {nav.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
+          <li><a href={url(item.href)}>{item.label}</a></li>
         ))}
       </ul>
     </div>
@@ -22,10 +22,10 @@ import { nav, site } from '../data/site.js';
     <div>
       <h2>Ürünler</h2>
       <ul>
-        <li><a href="/urunler/trabzon-ekmegi">Trabzon Ekmeği</a></li>
-        <li><a href="/urunler/diger-urunler">Diğer Ürünler</a></li>
-        <li><a href="/urunler">Tüm Ürünler</a></li>
-        <li><a href="/galeri">Galeri</a></li>
+        <li><a href={url('/urunler/trabzon-ekmegi')}>Trabzon Ekmeği</a></li>
+        <li><a href={url('/urunler/diger-urunler')}>Diğer Ürünler</a></li>
+        <li><a href={url('/urunler')}>Tüm Ürünler</a></li>
+        <li><a href={url('/galeri')}>Galeri</a></li>
       </ul>
     </div>
 

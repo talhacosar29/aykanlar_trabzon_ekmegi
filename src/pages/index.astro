@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site, products } from '../data/site.js';
+import { site, products, url } from '../data/site.js';
 
 const featured = [products[0], products[1], products[2]];
 ---
@@ -14,7 +14,7 @@ const featured = [products[0], products[1], products[2]];
   <section class="hero">
     <div class="hero-media">
       <img
-        src="/images/hero/production.jpg"
+        src={url('/images/hero/production.jpg')}
         alt="Usta, odun ateşli fırına uzun kürekle ekmek sürerken"
         fetchpriority="high"
         width="1536"
@@ -29,8 +29,8 @@ const featured = [products[0], products[1], products[2]];
         Gelenekten aldığımız güçle, ekşi mayanın ve odun ateşinin izini sürüyoruz.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-light" href="/urunler">Ürünlerimizi Keşfet</a>
-        <a class="btn btn-ghost" href="/kurumsal">Biz Kimiz?</a>
+        <a class="btn btn-light" href={url('/urunler')}>Ürünlerimizi Keşfet</a>
+        <a class="btn btn-ghost" href={url('/kurumsal')}>Biz Kimiz?</a>
       </div>
     </div>
   </section>
@@ -42,7 +42,7 @@ const featured = [products[0], products[1], products[2]];
         Gelenekten aldığımız güçle modern üretim anlayışını bir araya getiriyoruz.
         Her aşamasında doğallık, kalite ve ustalık olan bu yolculukta bizim için en önemli değer; güven ve lezzettir.
       </p>
-      <a class="link-arrow" href="/kurumsal">Kurumsal Hikâyemiz</a>
+      <a class="link-arrow" href={url('/kurumsal')}>Kurumsal Hikâyemiz</a>
     </div>
   </section>
 
@@ -52,7 +52,7 @@ const featured = [products[0], products[1], products[2]];
         <span class="eyebrow">Ürünler</span>
         <h2>Lezzetimizin Öne Çıkanları</h2>
       </div>
-      <a class="link-arrow" href="/urunler" data-reveal>Tümünü Gör</a>
+      <a class="link-arrow" href={url('/urunler')} data-reveal>Tümünü Gör</a>
     </div>
     <div class="feature-grid">
       <article class="product-tile tile-a" data-reveal="image">
@@ -84,7 +84,7 @@ const featured = [products[0], products[1], products[2]];
 
   <section class="flagship">
     <div class="flagship-media" data-reveal="image">
-      <img src="/images/products/trabzon-ekmegi.jpg" alt="Trabzon ekmeğinin kalın, kızarmış kabuğu" width="1600" height="1200" loading="lazy" />
+      <img src={url('/images/products/trabzon-ekmegi.jpg')} alt="Trabzon ekmeğinin kalın, kızarmış kabuğu" width="1600" height="1200" loading="lazy" />
     </div>
     <div class="flagship-copy" data-reveal>
       <span class="eyebrow">Trabzon Ekmeği</span>
@@ -115,7 +115,7 @@ const featured = [products[0], products[1], products[2]];
           <dd>{site.regions}</dd>
         </div>
       </dl>
-      <a class="btn btn-ghost" href="/urunler/trabzon-ekmegi">Trabzon Ekmeğini İncele</a>
+      <a class="btn btn-ghost" href={url('/urunler/trabzon-ekmegi')}>Trabzon Ekmeğini İncele</a>
     </div>
   </section>
 
@@ -172,23 +172,23 @@ const featured = [products[0], products[1], products[2]];
       </div>
       <div class="process-flow">
         <figure class="process-step" data-reveal="image">
-          <img src="/images/process/wheat.jpg" alt="Buğday taneleri" loading="lazy" width="800" height="600" />
+          <img src={url('/images/process/wheat.jpg')} alt="Buğday taneleri" loading="lazy" width="800" height="600" />
           <figcaption><strong>01</strong><span>Buğday</span></figcaption>
         </figure>
         <figure class="process-step" data-reveal="image">
-          <img src="/images/process/kneading.jpg" alt="Hamur yoğurma" loading="lazy" width="800" height="600" />
+          <img src={url('/images/process/kneading.jpg')} alt="Hamur yoğurma" loading="lazy" width="800" height="600" />
           <figcaption><strong>02</strong><span>Hamur</span></figcaption>
         </figure>
         <figure class="process-step" data-reveal="image">
-          <img src="/images/process/shaping.jpg" alt="Hamurun elde şekillendirilmesi" loading="lazy" width="800" height="600" />
+          <img src={url('/images/process/shaping.jpg')} alt="Hamurun elde şekillendirilmesi" loading="lazy" width="800" height="600" />
           <figcaption><strong>03</strong><span>Şekil</span></figcaption>
         </figure>
         <figure class="process-step" data-reveal="image">
-          <img src="/images/process/peel.jpg" alt="Odun ateşli fırına ekmek sürülmesi" loading="lazy" width="800" height="600" />
+          <img src={url('/images/process/peel.jpg')} alt="Odun ateşli fırına ekmek sürülmesi" loading="lazy" width="800" height="600" />
           <figcaption><strong>04</strong><span>Pişirme</span></figcaption>
         </figure>
         <figure class="process-step" data-reveal="image">
-          <img src="/images/gallery/cooling-racks.jpg" alt="Fırından çıkan ekmekler soğuma rafında" loading="lazy" width="800" height="600" />
+          <img src={url('/images/gallery/cooling-racks.jpg')} alt="Fırından çıkan ekmekler soğuma rafında" loading="lazy" width="800" height="600" />
           <figcaption><strong>05</strong><span>Sofraya</span></figcaption>
         </figure>
       </div>
@@ -208,28 +208,28 @@ const featured = [products[0], products[1], products[2]];
     </div>
     <div class="ig-grid">
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/instagram/ig-1.jpg" alt="Aykanlar ekmekleri soğuma rafında" loading="lazy" />
+        <img src={url('/images/instagram/ig-1.jpg')} alt="Aykanlar ekmekleri soğuma rafında" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/instagram/ig-2.jpg" alt="Aykanlar üretim alanı" loading="lazy" />
+        <img src={url('/images/instagram/ig-2.jpg')} alt="Aykanlar üretim alanı" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/instagram/ig-3.jpg" alt="Aykanlar Trabzon Ekmeği tabelası" loading="lazy" />
+        <img src={url('/images/instagram/ig-3.jpg')} alt="Aykanlar Trabzon Ekmeği tabelası" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/gallery/bakery-interior.jpg" alt="Fırın tezgâhı ve raflar" loading="lazy" />
+        <img src={url('/images/gallery/bakery-interior.jpg')} alt="Fırın tezgâhı ve raflar" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/process/flour.jpg" alt="Un ve usta elleri" loading="lazy" />
+        <img src={url('/images/process/flour.jpg')} alt="Un ve usta elleri" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/gallery/oven-interior.jpg" alt="Odun fırınının içi" loading="lazy" />
+        <img src={url('/images/gallery/oven-interior.jpg')} alt="Odun fırınının içi" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/gallery/crust-macro.jpg" alt="Ekmek kabuğu detayı" loading="lazy" />
+        <img src={url('/images/gallery/crust-macro.jpg')} alt="Ekmek kabuğu detayı" loading="lazy" />
       </a>
       <a href={site.instagram} target="_blank" rel="noopener noreferrer" data-reveal="image">
-        <img src="/images/process/production-floor.jpg" alt="Üretim hattı" loading="lazy" />
+        <img src={url('/images/process/production-floor.jpg')} alt="Üretim hattı" loading="lazy" />
       </a>
     </div>
   </section>

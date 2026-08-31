@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { site } from '../../data/site.js';
+import { site, url } from '../../data/site.js';
 ---
 
 <Base
@@ -10,7 +10,7 @@ import { site } from '../../data/site.js';
   ogImage="/images/products/trabzon-ekmegi.jpg"
 >
   <section class="product-hero">
-    <img src="/images/products/trabzon-ekmegi.jpg" alt="Geleneksel Trabzon ekmeği somunu" width="1600" height="1200" />
+    <img src={url('/images/products/trabzon-ekmegi.jpg')} alt="Geleneksel Trabzon ekmeği somunu" width="1600" height="1200" />
     <div class="copy">
       <span class="eyebrow">Ana Ürün</span>
       <h1>Ekşi Mayalı Trabzon Ekmeği</h1>
@@ -18,7 +18,7 @@ import { site } from '../../data/site.js';
         {site.tagline}. Odun ateşinde, ekşi mayayla. Karadeniz sofralarının en bilinen ekmeğini,
         her gün taptaze üretiyoruz.
       </p>
-      <a class="btn btn-dark" href="/iletisim" style="margin-top:1.6rem; align-self:flex-start">İletişime Geç</a>
+      <a class="btn btn-dark" href={url('/iletisim')} style="margin-top:1.6rem; align-self:flex-start">İletişime Geç</a>
     </div>
   </section>
 
@@ -48,7 +48,7 @@ import { site } from '../../data/site.js';
 
   <section class="flagship" style="min-height:auto">
     <div class="flagship-media" data-reveal="image">
-      <img src="/images/gallery/cooling-racks.jpg" alt="Fırından yeni çıkmış ekmekler soğuma rafında" loading="lazy" />
+      <img src={url('/images/gallery/cooling-racks.jpg')} alt="Fırından yeni çıkmış ekmekler soğuma rafında" loading="lazy" />
     </div>
     <div class="flagship-copy" data-reveal>
       <span class="eyebrow">Tazelik</span>
@@ -57,7 +57,7 @@ import { site } from '../../data/site.js';
         Bu cümle bir reklam sloganı değil; Aykanlar’ın kendi dilidir.
         Trabzon ekmeğini günlük üretmenin anlamı da budur.
       </p>
-      <a class="link-arrow" href="/urunler/diger-urunler" style="color:var(--cream); border-color:var(--gold)">
+      <a class="link-arrow" href={url('/urunler/diger-urunler')} style="color:var(--cream); border-color:var(--gold)">
         Diğer ürünleri gör
       </a>
     </div>

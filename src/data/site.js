@@ -1,3 +1,13 @@
+/** Prefix site paths for GitHub Pages (`base`) and local dev. */
+export function url(path = '/') {
+  const base = import.meta.env.BASE_URL || '/';
+  if (/^(https?:|tel:|mailto:)/i.test(path)) return path;
+  const [pathname, hash] = path.split('#');
+  const rest = !pathname || pathname === '/' ? '' : pathname.replace(/^\//, '');
+  const joined = rest ? `${base}${rest}` : base;
+  return hash ? `${joined}#${hash}` : joined;
+}
+
 export const site = {
   name: 'Aykanlar',
   fullName: 'Aykanlar Trabzon Ekmeği',
@@ -36,8 +46,8 @@ export const products = [
     name: 'Ekşi Mayalı Trabzon Ekmeği',
     short: 'Odun ateşinde, ekşi mayayla.',
     category: 'flagship',
-    href: '/urunler/trabzon-ekmegi',
-    image: '/images/products/trabzon-ekmegi.jpg',
+    href: url('/urunler/trabzon-ekmegi'),
+    image: url('/images/products/trabzon-ekmegi.jpg'),
     imageAlt: 'Geleneksel Trabzon ekmeği, kalın kabuklu yuvarlak somun',
   },
   {
@@ -45,8 +55,8 @@ export const products = [
     name: 'Ekşi Mayalı Tam Buğday Ekmeği',
     short: 'Tam buğdayın tok aroması.',
     category: 'wheat',
-    href: '/urunler/diger-urunler#tam-bugday',
-    image: '/images/products/whole-wheat.jpg',
+    href: url('/urunler/diger-urunler#tam-bugday'),
+    image: url('/images/products/whole-wheat.jpg'),
     imageAlt: 'Tam buğday ekmeği somunları',
   },
   {
@@ -54,8 +64,8 @@ export const products = [
     name: 'Mısır Ekmeği',
     short: 'Karadeniz sofralarının klasiği.',
     category: 'regional',
-    href: '/urunler/diger-urunler#misir',
-    image: '/images/products/misir-ekmegi.jpg',
+    href: url('/urunler/diger-urunler#misir'),
+    image: url('/images/products/misir-ekmegi.jpg'),
     imageAlt: 'Geleneksel mısır ekmeği',
   },
   {
@@ -63,8 +73,8 @@ export const products = [
     name: 'Ekşi Mayalı Pide',
     short: 'İnce, sıcak, taze.',
     category: 'regional',
-    href: '/urunler/diger-urunler#pide',
-    image: '/images/products/pide-style.jpg',
+    href: url('/urunler/diger-urunler#pide'),
+    image: url('/images/products/pide-style.jpg'),
     imageAlt: 'Taze pide ekmeği',
   },
   {
@@ -72,8 +82,8 @@ export const products = [
     name: 'Ekşi Mayalı Baston Ekmeği',
     short: 'Uzun form, çıtır kabuk.',
     category: 'wheat',
-    href: '/urunler/diger-urunler#baston',
-    image: '/images/products/baguette-style.jpg',
+    href: url('/urunler/diger-urunler#baston'),
+    image: url('/images/products/baguette-style.jpg'),
     imageAlt: 'Baston formunda ekmekler',
   },
   {
@@ -81,8 +91,8 @@ export const products = [
     name: 'Ekşi Mayalı Tava Ekmeği',
     short: 'Tava usulü, yumuşak iç yapı.',
     category: 'wheat',
-    href: '/urunler/diger-urunler#tava',
-    image: '/images/products/fresh-loaves.jpg',
+    href: url('/urunler/diger-urunler#tava'),
+    image: url('/images/products/fresh-loaves.jpg'),
     imageAlt: 'Tava ekmeği somunları',
   },
   {
@@ -90,8 +100,8 @@ export const products = [
     name: 'Sarı Buğday Ekmeği',
     short: 'Sarı buğdayın kendine has rengi.',
     category: 'regional',
-    href: '/urunler/diger-urunler#sari-bugday',
-    image: '/images/products/sourdough-close.jpg',
+    href: url('/urunler/diger-urunler#sari-bugday'),
+    image: url('/images/products/sourdough-close.jpg'),
     imageAlt: 'Sarı buğday ekmeği kabuğu',
   },
   {
@@ -99,8 +109,8 @@ export const products = [
     name: 'Gobit Tandır Ekmeği',
     short: 'Tandır usulü yöresel lezzet.',
     category: 'regional',
-    href: '/urunler/diger-urunler#gobit',
-    image: '/images/products/round-loaf.jpg',
+    href: url('/urunler/diger-urunler#gobit'),
+    image: url('/images/products/round-loaf.jpg'),
     imageAlt: 'Tandır ekmeği',
   },
   {
@@ -108,29 +118,29 @@ export const products = [
     name: 'Yöresel Ekmek',
     short: 'Karadeniz’in günlük ekmeği.',
     category: 'regional',
-    href: '/urunler/diger-urunler#yoresel',
-    image: '/images/products/somun.jpg',
+    href: url('/urunler/diger-urunler#yoresel'),
+    image: url('/images/products/somun.jpg'),
     imageAlt: 'Yöresel somun ekmek',
   },
 ];
 
 export const gallery = [
-  { src: '/images/products/trabzon-ekmegi.jpg', alt: 'Ekşi mayalı Trabzon ekmeği somunu', cat: 'urun' },
-  { src: '/images/gallery/trabzon-loaf.jpg', alt: 'Geleneksel Trabzon ekmeği', cat: 'urun' },
-  { src: '/images/products/whole-wheat.jpg', alt: 'Tam buğday somunları', cat: 'urun' },
-  { src: '/images/products/pide-style.jpg', alt: 'Ekşi mayalı pide', cat: 'urun' },
-  { src: '/images/products/misir-ekmegi.jpg', alt: 'Mısır ekmeği', cat: 'urun' },
-  { src: '/images/process/kneading.jpg', alt: 'Hamur yoğurma', cat: 'uretim' },
-  { src: '/images/process/shaping.jpg', alt: 'Hamurun elde şekillendirilmesi', cat: 'uretim' },
-  { src: '/images/process/flour.jpg', alt: 'Un ve usta elleri', cat: 'uretim' },
-  { src: '/images/process/production-floor.jpg', alt: 'Üretim alanı', cat: 'uretim' },
-  { src: '/images/instagram/ig-2.jpg', alt: 'Aykanlar üretim alanı', cat: 'uretim' },
-  { src: '/images/process/peel.jpg', alt: 'Odun ateşli fırına kürekle sürme', cat: 'firin' },
-  { src: '/images/gallery/oven-interior.jpg', alt: 'Odun fırınının içi', cat: 'firin' },
-  { src: '/images/gallery/bakery-interior.jpg', alt: 'Fırın tezgâhı', cat: 'firin' },
-  { src: '/images/gallery/cooling-racks.jpg', alt: 'Soğuma rafları', cat: 'firin' },
-  { src: '/images/gallery/crust-macro.jpg', alt: 'Ekmek kabuğu detayı', cat: 'detay' },
-  { src: '/images/process/wheat.jpg', alt: 'Buğday taneleri', cat: 'detay' },
-  { src: '/images/products/sourdough-close.jpg', alt: 'Sarı buğday ekmeği içi', cat: 'detay' },
-  { src: '/images/instagram/ig-1.jpg', alt: 'Fırından çıkan ekmekler', cat: 'urun' },
+  { src: url('/images/products/trabzon-ekmegi.jpg'), alt: 'Ekşi mayalı Trabzon ekmeği somunu', cat: 'urun' },
+  { src: url('/images/gallery/trabzon-loaf.jpg'), alt: 'Geleneksel Trabzon ekmeği', cat: 'urun' },
+  { src: url('/images/products/whole-wheat.jpg'), alt: 'Tam buğday somunları', cat: 'urun' },
+  { src: url('/images/products/pide-style.jpg'), alt: 'Ekşi mayalı pide', cat: 'urun' },
+  { src: url('/images/products/misir-ekmegi.jpg'), alt: 'Mısır ekmeği', cat: 'urun' },
+  { src: url('/images/process/kneading.jpg'), alt: 'Hamur yoğurma', cat: 'uretim' },
+  { src: url('/images/process/shaping.jpg'), alt: 'Hamurun elde şekillendirilmesi', cat: 'uretim' },
+  { src: url('/images/process/flour.jpg'), alt: 'Un ve usta elleri', cat: 'uretim' },
+  { src: url('/images/process/production-floor.jpg'), alt: 'Üretim alanı', cat: 'uretim' },
+  { src: url('/images/instagram/ig-2.jpg'), alt: 'Aykanlar üretim alanı', cat: 'uretim' },
+  { src: url('/images/process/peel.jpg'), alt: 'Odun ateşli fırına kürekle sürme', cat: 'firin' },
+  { src: url('/images/gallery/oven-interior.jpg'), alt: 'Odun fırınının içi', cat: 'firin' },
+  { src: url('/images/gallery/bakery-interior.jpg'), alt: 'Fırın tezgâhı', cat: 'firin' },
+  { src: url('/images/gallery/cooling-racks.jpg'), alt: 'Soğuma rafları', cat: 'firin' },
+  { src: url('/images/gallery/crust-macro.jpg'), alt: 'Ekmek kabuğu detayı', cat: 'detay' },
+  { src: url('/images/process/wheat.jpg'), alt: 'Buğday taneleri', cat: 'detay' },
+  { src: url('/images/products/sourdough-close.jpg'), alt: 'Sarı buğday ekmeği içi', cat: 'detay' },
+  { src: url('/images/instagram/ig-1.jpg'), alt: 'Fırından çıkan ekmekler', cat: 'urun' },
 ];

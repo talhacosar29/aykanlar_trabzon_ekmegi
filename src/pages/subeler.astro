@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../data/site.js';
+import { site, url } from '../data/site.js';
 ---
 
 <Base
@@ -46,7 +46,7 @@ import { site } from '../data/site.js';
       </p>
       <p style="margin-top:0.8rem">
         Güncel nokta için {site.instagramHandle} hesabını takip edin veya
-        <a class="link-arrow" href="/iletisim" style="display:inline-flex; margin-left:0.4rem">iletişime geçin</a>
+        <a class="link-arrow" href={url('/iletisim')} style="display:inline-flex; margin-left:0.4rem">iletişime geçin</a>
       </p>
     </div>
   </section>

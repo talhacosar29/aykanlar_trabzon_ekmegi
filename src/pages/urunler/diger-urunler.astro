@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { url } from '../../data/site.js';
 ---
 
 <Base
@@ -18,7 +19,7 @@ import Base from '../../layouts/Base.astro';
 
   <section class="wrap other-list">
     <article class="other-row" id="tam-bugday">
-      <img src="/images/products/whole-wheat.jpg" alt="Tam buğday ekmeği" loading="lazy" />
+      <img src={url('/images/products/whole-wheat.jpg')} alt="Tam buğday ekmeği" loading="lazy" />
       <div>
         <span class="eyebrow">Tam Buğday</span>
         <h2>Ekşi Mayalı Tam Buğday Ekmeği</h2>
@@ -26,7 +27,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="tava">
-      <img src="/images/products/fresh-loaves.jpg" alt="Tava ekmeği" loading="lazy" />
+      <img src={url('/images/products/fresh-loaves.jpg')} alt="Tava ekmeği" loading="lazy" />
       <div>
         <span class="eyebrow">Tava</span>
         <h2>Ekşi Mayalı Tava Ekmeği</h2>
@@ -34,7 +35,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="baston">
-      <img src="/images/products/baguette-style.jpg" alt="Baston ekmeği" loading="lazy" />
+      <img src={url('/images/products/baguette-style.jpg')} alt="Baston ekmeği" loading="lazy" />
       <div>
         <span class="eyebrow">Baston</span>
         <h2>Ekşi Mayalı Baston Ekmeği</h2>
@@ -42,7 +43,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="pide">
-      <img src="/images/products/pide-style.jpg" alt="Ekşi mayalı pide" loading="lazy" />
+      <img src={url('/images/products/pide-style.jpg')} alt="Ekşi mayalı pide" loading="lazy" />
       <div>
         <span class="eyebrow">Pide</span>
         <h2>Ekşi Mayalı Pide</h2>
@@ -50,7 +51,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="misir">
-      <img src="/images/products/misir-ekmegi.jpg" alt="Mısır ekmeği" loading="lazy" />
+      <img src={url('/images/products/misir-ekmegi.jpg')} alt="Mısır ekmeği" loading="lazy" />
       <div>
         <span class="eyebrow">Yöresel</span>
         <h2>Mısır Ekmeği</h2>
@@ -58,7 +59,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="sari-bugday">
-      <img src="/images/products/sourdough-close.jpg" alt="Sarı buğday ekmeği kabuğu" loading="lazy" />
+      <img src={url('/images/products/sourdough-close.jpg')} alt="Sarı buğday ekmeği kabuğu" loading="lazy" />
       <div>
         <span class="eyebrow">Yöresel</span>
         <h2>Sarı Buğday Ekmeği</h2>
@@ -66,7 +67,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="gobit">
-      <img src="/images/products/round-loaf.jpg" alt="Gobit tandır ekmeği" loading="lazy" />
+      <img src={url('/images/products/round-loaf.jpg')} alt="Gobit tandır ekmeği" loading="lazy" />
       <div>
         <span class="eyebrow">Tandır</span>
         <h2>Gobit Tandır Ekmeği</h2>
@@ -74,7 +75,7 @@ import Base from '../../layouts/Base.astro';
       </div>
     </article>
     <article class="other-row" id="yoresel">
-      <img src="/images/products/somun.jpg" alt="Yöresel somun ekmek" loading="lazy" />
+      <img src={url('/images/products/somun.jpg')} alt="Yöresel somun ekmek" loading="lazy" />
       <div>
         <span class="eyebrow">Günlük</span>
         <h2>Yöresel Ekmek</h2>

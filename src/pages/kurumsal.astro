@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../data/site.js';
+import { site, url } from '../data/site.js';
 ---
 
 <Base
@@ -17,7 +17,7 @@ import { site } from '../data/site.js';
   </section>
 
   <div class="page-photo" data-reveal="image">
-    <img src="/images/process/peel.jpg" alt="Usta, odun ateşli fırına kürekle ekmek sürerken" width="1536" height="1024" />
+    <img src={url('/images/process/peel.jpg')} alt="Usta, odun ateşli fırına kürekle ekmek sürerken" width="1536" height="1024" />
   </div>
 
   <section class="wrap story">
@@ -106,7 +106,7 @@ import { site } from '../data/site.js';
         Amacımız köy fırını romantizmi değil; yıllardır kaliteli ekmek üreten,
         güvenilir ve profesyonel bir marka duruşudur.
       </p>
-      <a class="link-arrow" href="/urunler" style="margin-top:1.4rem">Ürünlerimizi Keşfet</a>
+      <a class="link-arrow" href={url('/urunler')} style="margin-top:1.4rem">Ürünlerimizi Keşfet</a>
     </div>
   </section>
 </Base>
