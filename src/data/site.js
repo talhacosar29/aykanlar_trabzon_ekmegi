@@ -35,6 +35,33 @@ export const site = {
   },
 };
 
+export const branches = [
+  {
+    id: 'tuzla',
+    title: 'Tuzla',
+    role: 'Üretim & Satış',
+    name: 'Aykanlar Trabzon Ekmeği Sanayi ve Ticaret Limited Şirketi',
+    street: 'Deri OSB Mah. Cihan Sokak, II. Blok No: 2/13',
+    district: '34956 Tuzla / İstanbul',
+    phone: '0533 383 53 53',
+    phoneHref: 'tel:+905333835353',
+    maps: 'https://maps.app.goo.gl/vbG3at182ua1oef59',
+    mapsEmbed:
+      'https://maps.google.com/maps?q=Deri%20OSB%20Mahallesi%20Cihan%20Sokak%20Tuzla%20%C4%B0stanbul&hl=tr&z=16&output=embed',
+  },
+  {
+    id: 'izmit',
+    title: 'İzmit',
+    role: 'Şube',
+    name: 'Aykanlar ekmek fırını',
+    street: 'Gültepe, Miralay Mümtaz Cd. No:61',
+    district: '41100 İzmit / Kocaeli',
+    maps: 'https://maps.app.goo.gl/SUuGv6B8yM6C8RZD8',
+    mapsEmbed:
+      'https://maps.google.com/maps?q=G%C3%BCltepe%2C%20Miralay%20M%C3%BCmtaz%20Cd.%20No%3A61%2C%2041100%20%C4%B0zmit%2FKocaeli&hl=tr&z=17&output=embed',
+  },
+];
+
 export const nav = [
   { href: '/', label: 'Ana Sayfa' },
   { href: '/kurumsal', label: 'Kurumsal' },

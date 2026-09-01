@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../data/site.js';
+import { site, branches } from '../data/site.js';
 ---
 
 <Base
   title="İletişim | Aykanlar Trabzon Ekmeği"
-  description="Aykanlar Trabzon Ekmeği ile iletişime geçin. Tuzla adresi, telefon ve Instagram."
+  description="Aykanlar Trabzon Ekmeği ile iletişime geçin. Tuzla ve İzmit adresleri, telefon ve Instagram."
   path="/iletisim"
 >
   <section class="wrap contact-grid" style="padding-top:4.5rem">
@@ -21,17 +21,20 @@ import { site } from '../data/site.js';
           <span>Telefon</span>
           <a href={site.phoneHref}>{site.phone}</a>
         </div>
-        <div>
-          <span>Adres</span>
-          <p>{site.address.street}<br />{site.address.district}</p>
-        </div>
+        {branches.map((b) => (
+          <div>
+            <span>{b.title}</span>
+            <p>
+              {b.name}<br />
+              {b.street}<br />
+              {b.district}
+            </p>
+            <a href={b.maps} target="_blank" rel="noopener noreferrer">Yol tarifi</a>
+          </div>
+        ))}
         <div>
           <span>Instagram</span>
           <a href={site.instagram} target="_blank" rel="noopener noreferrer">{site.instagramHandle}</a>
-        </div>
-        <div>
-          <span>Bölge</span>
-          <p>{site.regions}</p>
         </div>
       </div>
     </div>
@@ -58,12 +61,17 @@ import { site } from '../data/site.js';
     </form>
   </section>
 
-  <div class="map-full">
-    <iframe
-      title="Aykanlar Tuzla haritası"
-      src={site.mapsEmbed}
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+  <div class="map-pair">
+    {branches.map((b) => (
+      <div class="map-full">
+        <p class="map-label">{b.title}</p>
+        <iframe
+          title={`Aykanlar ${b.title} haritası`}
+          src={b.mapsEmbed}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    ))}
   </div>
 </Base>

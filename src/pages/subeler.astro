@@ -1,53 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site, url } from '../data/site.js';
+import { branches } from '../data/site.js';
 ---
 
 <Base
   title="Şubeler | Aykanlar Trabzon Ekmeği"
-  description="Aykanlar Trabzon Ekmeği Tuzla üretim ve satış noktası. İstanbul ve İzmit’te hizmet."
+  description="Aykanlar Trabzon Ekmeği Tuzla ve İzmit şubeleri. İstanbul ve İzmit’te her gün taze ekmek."
   path="/subeler"
 >
   <section class="wrap page-hero">
     <span class="eyebrow">Şubeler</span>
     <h1>Nereden ulaşabilirsiniz.</h1>
     <p>
-      Instagram hesabımız hizmet bölgelerini {site.regions} olarak belirtir.
-      Aşağıda yalnızca resmi kayıtlarda ve harita linklerinde doğrulanan Tuzla adresi yer alır.
+      Tuzla üretim ve satış noktamız ile İzmit şubemiz. Yol tarifi için haritayı kullanabilirsiniz.
     </p>
   </section>
 
   <section class="wrap">
-    <article class="branch" data-reveal>
-      <div class="branch-info">
-        <span class="eyebrow">Üretim & Satış</span>
-        <h2>{site.address.title}</h2>
-        <p>{site.company}</p>
-        <p>{site.address.street}</p>
-        <p>{site.address.district}</p>
-        <p><a href={site.phoneHref}>{site.phone}</a></p>
-        <a class="btn btn-dark" href={site.maps} target="_blank" rel="noopener noreferrer">Yol Tarifi Al</a>
-      </div>
-      <iframe
-        title="Aykanlar Tuzla konumu"
-        src={site.mapsEmbed}
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </article>
-
-    <div class="note-box" data-reveal>
-      <span class="eyebrow">İzmit</span>
-      <h2 style="font-family:var(--serif); font-size:2rem; margin:0.6rem 0 0.8rem; color:var(--ink)">İzmit noktası</h2>
-      <p>
-        Marka, Instagram biyografisinde İzmit’i de hizmet alanı olarak gösterir.
-        Kamuya açık kayıtlarda doğrulanmış açık adres, saat ve telefon bilgisi bulunamadığı için
-        bu sayfada İzmit için uydurma bir şube kartı oluşturulmadı.
-      </p>
-      <p style="margin-top:0.8rem">
-        Güncel nokta için {site.instagramHandle} hesabını takip edin veya
-        <a class="link-arrow" href={url('/iletisim')} style="display:inline-flex; margin-left:0.4rem">iletişime geçin</a>
-      </p>
-    </div>
+    {branches.map((b) => (
+      <article class="branch" id={b.id} data-reveal>
+        <div class="branch-info">
+          <span class="eyebrow">{b.role}</span>
+          <h2>{b.title}</h2>
+          <p>{b.name}</p>
+          <p>{b.street}</p>
+          <p>{b.district}</p>
+          {b.phone && (
+            <p><a href={b.phoneHref}>{b.phone}</a></p>
+          )}
+          <a class="btn btn-dark" href={b.maps} target="_blank" rel="noopener noreferrer">Yol Tarifi Al</a>
+        </div>
+        <iframe
+          title={`Aykanlar ${b.title} konumu`}
+          src={b.mapsEmbed}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </article>
+    ))}
   </section>
 </Base>
